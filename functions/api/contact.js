@@ -45,7 +45,7 @@ async function sendTeamsMessage(name, message, email, webhookUrl) {
       username: 'Website Contact Form',
       embeds: [{
         title: 'New Message',
-        type: 'rich',
+        type: 'text',
         fields: [
           {
             name: 'Name',
