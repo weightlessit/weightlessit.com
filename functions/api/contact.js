@@ -23,20 +23,19 @@ async function handleRequest({ request, env }) {
     return new Response(JSON.stringify({ env, }), { status: 500 });
   }
 
-  // Send message :)
-  // Just remove the comment from whichever one you want
-  await sendDiscordMessage(name, message, email, env.TEAMS_WEBHOOK_URL);
-  // await sendEmailWithSendGrid();
+
+  await sendTeamsMessage(name, message, email, env.TEAMS_WEBHOOK_URL);
+
 
   return new Response('Thanks for contacting us! ');
 }
 
-// Make sure to set the "DISCORD_WEBHOOK_URL" variable
+// Make sure to set the "TEAMS_WEBHOOK_URL" variable in the CF pages -> variables and secrets section
 // Refer to <> for help
 // ---
-// This function will send a Discord message to the supplied webhook URL
+// This function will send a Teams message to the supplied webhook URL
 
-async function sendDiscordMessage(name, message, email, webhookUrl) {
+async function sendTeamsMessage(name, message, email, webhookUrl) {
   await fetch(webhookUrl, {
     method: 'POST',
     headers: {
@@ -52,10 +51,10 @@ async function sendDiscordMessage(name, message, email, webhookUrl) {
             name: 'Name',
             value: name,
           },
-	  {
-	    email: 'Email',
-	    value: email,
-	  },
+          {
+			email: 'Email',
+			value: email,
+		  },
           {
             name: 'Message',
             value: message,
@@ -65,11 +64,3 @@ async function sendDiscordMessage(name, message, email, webhookUrl) {
     }),
   });
 }
-
-// Make sure to set the "DISCORD_WEBHOOK_URL" variable
-// Refer to <> for help
-// ---
-// This function will send an email through SendGrid
-async function sendEmailWithSendGrid(details) {
-  // TODO
-} 
