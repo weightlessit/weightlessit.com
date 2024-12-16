@@ -35,8 +35,8 @@ async function handleRequest({ request, env }) {
 // ---
 // This function will send a Teams message to the supplied webhook URL
 
-async function sendTeamsMessage(name, message, email, env.TEAMS_WEBHOOK_URL) {
-  await fetch(env.TEAMS_WEBHOOK_URL, {
+async function sendTeamsMessage(name, message, email, webhookUrl) {
+  await fetch(webhookUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
