@@ -55,7 +55,7 @@ async function sendDiscordMessage(name, message, email, webhookUrl) {
 	  {
 	    email: 'Email',
 	    value: email,
-	  }
+	  },
           {
             name: 'Message',
             value: message,
