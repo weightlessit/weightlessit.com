@@ -93,4 +93,3 @@ axios.post(webhookUrl , formatted_Card_Payload )
     .catch(error => {
         console.error(error)
     })
-}
