@@ -52,6 +52,6 @@ async function sendTeamsMessage(name, message, email, webhookUrl) {
     body: JSON.stringify(json)
 	
     }
-}
+)
 
 
