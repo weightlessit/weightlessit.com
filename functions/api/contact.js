@@ -12,8 +12,8 @@ async function handleRequest({ request, env }) {
   // Grab the form fields
   
 const json = {
-	name: data.get('name')
-	email: data.get('email')
+	name: data.get('name'),
+	email: data.get('email'),
 	message: data.get('message')
 }
 
