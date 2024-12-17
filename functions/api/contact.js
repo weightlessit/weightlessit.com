@@ -11,15 +11,15 @@ async function handleRequest({ request, env }) {
 
   // Grab the form fields
   
-const json = {
-	name: data.get('name'),
-	email: data.get('email'),
-	message: data.get('message')
-}
-
   const name = data.get('name');
   const message = data.get('message');
   const email = data.get('email');
+  
+const json = {
+	"name": name,
+	"email": email,
+	"message": message
+}
 
   // Validate the JSON
   if (!name || !message || !email) {
