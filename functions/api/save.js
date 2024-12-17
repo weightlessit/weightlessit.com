@@ -74,8 +74,8 @@ var formatted_Card_Payload = {
 			    "text": email
 			},
 			{
-                            "type": "TextBlock",
-                            "text": message
+                "type": "TextBlock",
+                "text": message
                         }
                     ]
                 }
@@ -83,7 +83,7 @@ var formatted_Card_Payload = {
         ]
     }
 
-var webhookUrl = ;
+var webhookUrl = env.TEAMS_WEBHOOK_URL;
 
 axios.post(webhookUrl , formatted_Card_Payload )
     .then(res => {
