@@ -10,9 +10,16 @@ async function handleRequest({ request, env }) {
   const data = await request.formData();
 
   // Grab the form fields
-  const name = data.get('name');
-  const message = data.get('message');
-  const email = data.get('email');
+  
+const json = {
+	name: data.get('name')
+	email: data.get('email')
+	message: data.get('message')
+}
+
+//  const name = data.get('name');
+//  const message = data.get('message');
+//  const email = data.get('email');
 
   // Validate the JSON
   if (!name || !message || !email) {
@@ -41,14 +48,10 @@ async function sendTeamsMessage(name, message, email, webhookUrl) {
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
     },
-    body: JSON.stringify(
 	
-	{"name": "name", text: "[name] - [email] - [message]"},
-//	{"name": "email", text: email},
-//	{"name": "message", text: message}
+    body: JSON.stringify(json);
 	
-    )
-    })
+    }
 }
 
 
