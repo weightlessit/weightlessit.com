@@ -22,9 +22,9 @@ const json = {
 //  const email = data.get('email');
 
   // Validate the JSON
-  if (!name || !message || !email) {
-    return new Response('Make sure the all the fields are filled out and try again.', { status: 400 });
-  }
+  //if (!name || !message || !email) {
+  //  return new Response('Make sure the all the fields are filled out and try again.', { status: 400 });
+  //}
 
   if (false) {
     return new Response(JSON.stringify({ env, }), { status: 500 });
