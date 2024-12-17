@@ -43,9 +43,9 @@ async function sendTeamsMessage(name, message, email, webhookUrl) {
     },
     body: JSON.stringify(
 	
-	{text: name},
-	{text: email},
-	{text: message}
+	{"name": "name", text: name},
+	{"name": "email", text: email},
+	{"name": "message", text: message}
 	
     )
     })
