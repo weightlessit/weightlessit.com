@@ -41,8 +41,6 @@ async function sendTeamsMessage(name, message, email, webhookUrl) {
     headers: {
       'Content-Type': 'application/json',
     },
-	content: 
-	{
     body: JSON.stringify({
 	  type: 'message',
       summary: 'New Contact Form Submission',
@@ -70,4 +68,4 @@ async function sendTeamsMessage(name, message, email, webhookUrl) {
     }),
   });
 };
-}
+
