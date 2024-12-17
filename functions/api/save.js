@@ -27,25 +27,25 @@ async function handleRequest({ request }) {
   return new Response("OK", { status: 200 });
 }
 
-async function validateToken(ip, token) {
-  const TURNSTILE_SECRET_KEY = "0x4AAAAAAAyI79hOadAGf8B24pIUx6zaSy0";
+//async function validateToken(ip, token) {
+//  const TURNSTILE_SECRET_KEY = "0x4AAAAAAAyI79hOadAGf8B24pIUx6zaSy0";
 
-  const formData = new FormData();
-  formData.append("secret", TURNSTILE_SECRET_KEY);
-  formData.append("response", token);
-  formData.append("remoteip", ip);
+//  const formData = new FormData();
+// formData.append("secret", TURNSTILE_SECRET_KEY);
+//  formData.append("response", token);
+//  formData.append("remoteip", ip);
 
-  const url = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+//  const url = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
-  const result = await fetch(url, {
-    body: formData,
-    method: "POST",
-  });
+//  const result = await fetch(url, {
+//    body: formData,
+//    method: "POST",
+//  });
 
-  const outcome = await result.json();
+//  const outcome = await result.json();
 
-  return outcome.success;
-}
+//  return outcome.success;
+//}
 
 //async function forwardMessage(name, email, message) {
   // Forward the message to an email address, webhook etc.
