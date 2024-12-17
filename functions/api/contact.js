@@ -47,21 +47,18 @@ async function sendTeamsMessage(name, message, email, webhookUrl) {
       embeds: [
 		{
         activityTitle: 'New Contact Form Submission',
-        content: [
+        facts: [
           {
             name: 'Name',
             value: name,
-			type: 'TextBlock',
           },
           {
-			email: 'Email',
-			value: email,
-			type: 'TextBlock',			
+			name: 'Email',
+			value: email,			
 		  },
           {
             name: 'Message',
-            value: message,
-			type: 'TextBlock',			
+            value: message,			
           }
         ]
       }]
