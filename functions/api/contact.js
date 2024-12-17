@@ -17,7 +17,6 @@ const json = {
 	message: data.get('message')
 }
 
-
   const name = data.get('name');
   const message = data.get('message');
   const email = data.get('email');
@@ -32,7 +31,7 @@ const json = {
   }
 
 
-  await sendTeamsMessage(name, message, email, env.TEAMS_WEBHOOK_URL);
+  await sendTeamsMessage(json, env.TEAMS_WEBHOOK_URL);
 
 
   return new Response('Thanks for contacting us! ');
@@ -43,7 +42,7 @@ const json = {
 // ---
 // This function will send a Teams message to the supplied webhook URL
 
-async function sendTeamsMessage(name, message, email, webhookUrl) {
+async function sendTeamsMessage(json, webhookUrl) {
   await fetch(webhookUrl, {
     method: 'POST',
     headers: {
