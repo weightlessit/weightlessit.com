@@ -43,7 +43,7 @@ async function sendTeamsMessage(name, message, email, webhookUrl) {
     },
 	
     body: JSON.stringify({
-	  type: 'MessageCard'
+	  type: 'MessageCard',
       summary: 'New Contact Form Submission',
       embeds: [{
         activityTitle: 'New Contact Form Submission',
