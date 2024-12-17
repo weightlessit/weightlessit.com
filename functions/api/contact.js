@@ -43,25 +43,31 @@ async function sendTeamsMessage(name, message, email, webhookUrl) {
     },
     body: JSON.stringify({
 	  type: 'message',
-      summary: 'New Contact Form Submission',
+      summary: 'summary',
       embeds: [
-		{
-        activityTitle: 'New Contact Form Submission',
-        facts: [
-          {
-            name: 'Name',
-            value: name,
-          },
-          {
-			name: 'Email',
-			value: email,			
-		  },
-          {
-            name: 'Message',
-            value: message,			
-          }
-        ]
-      }]
+            {
+                "contentType": "application/vnd.microsoft.card.adaptive",
+                "contentUrl": null,
+                "content": {
+                    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                    "type": "AdaptiveCard",
+                    "version": "1.2",
+                    "body": [
+                        {
+			    "type": "text",
+			    "text": name
+			},
+			{
+			    "type": "text",
+			    "text": email
+			},
+			{
+                "type": "TextBlock",
+                "text": message
+                        }
+                    ]
+                }
+            }]
     }),
   });
 };
